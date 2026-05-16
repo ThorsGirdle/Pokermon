@@ -299,6 +299,9 @@ function SMODS.current_mod.calculate(self, context)
     end
   end
   --Garbodor
+  if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss == true then
+    G.GAME.poke_ante_discards_used = 0
+  end
   if context.pre_discard and not context.hook then
     G.GAME.poke_ante_discards_used = (G.GAME.poke_ante_discards_used or 0) + 1
   end
